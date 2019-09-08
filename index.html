@@ -63,11 +63,13 @@
 		
 		utm_content=getURLParameter('utm_content');
    
+var url = window.location.search;
+url = url.replace("?", ''); // remove the ?
 
         
 
-		url = aa+dd+ee+ff+gg+hh+jj+kk+ll+mm+"utm_content="+utm_content;
-		console.log(url);
+		url = aa+dd+ee+ff+gg+hh+jj+kk+ll+mm+url;
+		
 		
 		function btn_no() {
 			document.getElementById("wrap").remove();
