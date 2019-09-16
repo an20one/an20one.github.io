@@ -13,18 +13,13 @@
 <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
 <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
 <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="msapplication-TileColor" content="#E6E6FA">
 <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#E6E6FA">
 
-	
-	
-	
+
+		
 	<script type='text/javascript'>
         //Один LP Pixel для нескольких кампаний bin0m
         //http://landing-page.com/index.html?key=one
@@ -60,88 +55,6 @@
 </script>
 	
 	
-	<!-- THIS METHOD IS VERY ///, USE IT IF NO OTHER OPTIONS IS AVAILABLE -->
-<!-- Paste this code to head section 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
-<script>
-function check(secretKey, ttl, signature) {
-    try {
-        let sign = atob(signature);
-        sign = JSON.parse(sign);
-        if (!sign.timestamp || !sign.hash) return false;
-        const signedHash = CryptoJS.HmacSHA1(sign.timestamp, secretKey).toString();
-        if (signedHash !== sign.hash || sign.timestamp < (((new Date().getTime() / 1000) | 0) - ttl).toString()) return false;
-        return true;
-    } catch (err) {
-        return false;
-    }
-}
-const secretKey = 'MmViYmM4ZTc3ZWZkNmZhZDYwMjI4MDY5YTAzMGM1ZmNjNDRmNzNmMw=='; // Your secret key
-const fallbackUrl = 'http://jqrjk.bemobtrk.com/go/fae1dd02-7195-4b4d-8542-b934230044cf'; // Redirect URL for users who didn't pass the check
-const ttl = 60;
-const signature = new URL(document.location.href).searchParams.get('key');
-if(!check(secretKey, ttl, signature))
-    document.location.href = fallbackUrl;
-</script>
-	
-	-->
-	
-
-  
-
-  
-  
-   <script type="text/javascript">
-       //ПАРСИТ УРЛ ПАРАМЕТРЫ
-       function getURLParameter(name) {
-           return decodeURI(
-               (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
-           );
-       }
-       </script>
-  
-
-   <script type="text/javascript">
-
-       //СПИННЕР ИГРУШКА ДЬЯВОЛА ЗАТЕМНЕНИЕ
-       document.addEventListener('DOMContentLoaded', function() {
-
-		
-		var element = document.getElementById('loaderFlow');
-element.style.opacity = "0.0";
-		
-}, false);
- </script>	
-  
-<!--
-<script type="text/javascript">
-    
-    //ОТПРАВЛЯЕТ ПОСТБЕК
-var postbackUrl = 'https://jqrjk.bemobtrk.com/postback';
-function sendPostback(params, cb) {
-    var pattern = new RegExp('cid=([^&]+)');
-    var params = params || {};
-    params.subid = ((v=window.location.search.match(pattern))==null?'':v[1]);
-    params.return = 'img';
-    var img = document.createElement('img');
-    img.src = postbackUrl + '?' + paramsToString(params);
-    img.height=0;
-    img.width=0;
-    img.onload = cb;
-    document.getElementsByTagName("body")[0].append(img);
-};
-function paramsToString (params) {
-    var str = [];
-    for (var p in params) {
-        if (params.hasOwnProperty(p)) {
-            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(params[p]));
-        }
-    }
-    return str.join("&");
-};
-</script>
--->
-
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
@@ -154,152 +67,167 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-  
- 
-</script> 
- 
- 
- 
- 
-  <!-- Facebook Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', getURLParameter('fbid'));
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id="+getURLParameter('fbid')+"&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-  
-<script>
-//PWA
-      let deferredPrompt = null;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-});
-
-async function install() {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    console.log(deferredPrompt)
-	  document.getElementById('loaderFlow').hidden = false;
-	  var element = document.getElementById('loaderFlow');
-          element.style.opacity = "1.0";
-    deferredPrompt.userChoice.then(function(choiceResult){
-
-      if (choiceResult.outcome === 'accepted') {
-      console.log('Your PWA has been installed');
-          //ОТПРАВЛЯЕМ ПОСТБЕК С КЛИКИД КОТОРЫЙ СПАРСИЛИ ИЗ УРЛ
-        sendPostback({cid: getURLParameter('clickid'), status: 'install'});
-          //СРАБАТЫВАЕТ FB pixel
-          fbq('track', 'Lead');
-          
-        //СРАБАТЫВАЕТ bin0m pixel
-          var o = document.createElement("img");
-    o.src='https://track001v1.com/click.php?event1=1';
-          //ЗАЧЕМТО В КУКИ ПИШЕМ КЛИКИД
-          // обновляем только куки с именем 'clickid'
-          // alert(document.cookie);
-        document.cookie = "clickid="+getURLParameter('clickid');
-         // document.cookie = "fbid="+getURLParameter('fbid');
-           document.cookie = "key="+getURLParameter('key');
-         //   document.cookie = "ad_id="+getURLParameter('ad_id');
-         //   document.cookie = "adset_id="+getURLParameter('adset_id');
-         //   document.cookie = "campaign_id="+getURLParameter('campaign_id');
-          //  document.cookie = "ad_name="+getURLParameter('ad_name');
-          //  document.cookie = "adset_name="+getURLParameter('adset_name');
-          //  document.cookie = "campaign_name="+getURLParameter('campaign_name');
-        //  document.cookie = "placement="+getURLParameter('placement');
-          
-      
-          //ОТПРАВЛЯЕМ ЮЗЕРА ВНУТРЬ ПВА С КЛИКИД
-        window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid')+'&key'+getURLParameter('key');
-           
-         // https://track001v1.com/click.php?lp=1
-          
-          //МАНИПУЛЯЦИИ СО СПИННЕРОМ
-	      document.getElementById('loaderFlow').hidden = true;
-	      element.style.opacity = "0.0";
-   
-    } else {
-	     document.getElementById('loaderFlow').hidden = true;
-      console.log('User chose to not install your PWA');
-	    element.style.opacity = "0.0";
-    }
-
-    deferredPrompt = null;
-
-    });
-
-
-  }
-}
 </script>
 
   <title>HARDDATE 21+</title>
- 
- 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://use.fontawesome.com/4ca20d00e4.js"></script>
+  
+  <script>
+  function readCookie(name) {
+
+	var name_cook = name+"=";
+	var spl = document.cookie.split(";");
+	
+	for(var i=0; i<spl.length; i++) {
+	
+		var c = spl[i];
+		
+		while(c.charAt(0) == " ") {
+		
+			c = c.substring(1, c.length);
+			
+		}
+		
+		if(c.indexOf(name_cook) == 0) {
+			
+			return c.substring(name_cook.length, c.length);
+			
+		}
+		
+	}
+	
+	return null;
+	
+}
+    
+    var clickidFromCookie = readCookie("clickid");
+      var urlFromCookie = readCookie("indexUrl");
+      
+      
+      
+      
+      function getCookie(name) {
+   var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+//      alert(getCookie("clickid"));
+//      alert(getCookie("indexUrl"));
+      
+      
+</script>
+                             
 </head>
 <body>
+  <div style="-webkit-overflow-scrolling: touch;overflow-x:hidden;overflow-y: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+<!--    <iframe src='https://jqrjk.bemobtrk.com/go/cf7f5f5b-7d78-4faf-b55f-b6800925c568?clickidparametr="+ clickidFromCookie + "' style="width:100%;height:100%;border: none;"></iframe>-->
+    <iframe src='https://track001v1.com/click.php?lp=1
+    ' style="width:100%;height:100%;border: none;"></iframe>
+    
+    
+   
+    
+    </div>
+
+<!--
+ PUSH
+ 	 	 <script src="https://newsadsppush.com/v1/js/56523.js"></script>-->
+	 <script>
+	"use strict";
+
+function showNotification(notice) {
+    return self.registration.showNotification(notice.title, {
+        body: notice.body || '',
+        icon: notice.icon || undefined,
+        image: notice.image || undefined,
+        imageUrl: notice.image || undefined,
+        vibrate: notice.vibrate || true,
+        badge: notice.badge || undefined,
+        sound: notice.sound || undefined,
+        sticky: notice.sticky || true,
+        requireInteraction: notice.requireInteraction || true,
+        actions: notice.actions || [],
+        data: {
+            url: notice.url,
+            eventUrl: notice.eventUrl || '/'
+        },
+        renotify: notice.renotify || false,
+        tag: notice.tag || 'id1'
+    });
+}
+
+self.addEventListener("install", function (t) {
+    t.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener("push", function (event) {
+    var push = event.data.json(),
+        chain = [];
+
+    if (push.type === 'ad') {
+        chain.push(showNotification(push));
+    }
+
+    if (push.type === 'ping') {
+        var PingPromise = fetch(push.pingUrl).then(function (response) {
+            var contentType = response.headers.get("content-type");
+            return contentType && contentType.indexOf("application/json") !== -1 ? response.json() : response.text();
+        }).then(function (json) {
+            return json.type === 'ad' ? showNotification(json) : null;
+        });
+
+        chain.push(PingPromise);
+    }
+    event.waitUntil(Promise.all(chain));
+});
+
+self.addEventListener('notificationclick', function (event) {
+    var chain = [],
+        noticeData = event.notification.data;
+
+    chain.push(clients.openWindow(noticeData.url));
+    event.notification.close();
+    event.waitUntil(Promise.all(chain));
+});
+
+self.addEventListener('notificationclose', function (event) {
+    var chain = [],
+        noticeData = event.notification.data;
+
+    if (noticeData) {
+        chain.push(fetch(noticeData.eventUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                event_id: 'notificationclose'
+            })
+        }));
+    }
+
+    event.waitUntil(Promise.all(chain));
+});
+	</script>	
 	
-        
-                  	<!-- 3 Loader -->
-<div id="loaderFlow" class="container d-flex h-100 loader loader--style3 justify-content-center align-items-center" title="2" onclick="install()">
-  <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="178px" height="178px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-  <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-    <animateTransform attributeType="xml"
-      attributeName="transform"
-      type="rotate"
-      from="0 25 25"
-      to="360 25 25"
-      dur="0.6s"
-      repeatCount="indefinite"/>
-    </path>
-  </svg>
-</div>  
+	<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-
-                  
-             
-                  
-                  
-                  
-                  
-                  
-     
-              <button  href="" style="width: 20%;" class="download-wait red" onclick="install()">
-                  Install
-              </button>
-    
-    
-    
-    
-
-
-
-              
-              
-              
-  
-
-
-
-        
- 
-	 
-  
-</body>
+   ym(55273405, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/55273405" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+	
+	</body>
 </html>
