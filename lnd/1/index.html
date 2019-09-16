@@ -113,6 +113,7 @@ element.style.opacity = "0.0";
 }, false);
  </script>	
   
+<!--
 <script type="text/javascript">
     
     //ОТПРАВЛЯЕТ ПОСТБЕК
@@ -139,6 +140,7 @@ function paramsToString (params) {
     return str.join("&");
 };
 </script>
+-->
 
 <script>
 if ('serviceWorker' in navigator) {
@@ -211,19 +213,19 @@ async function install() {
           // обновляем только куки с именем 'clickid'
           // alert(document.cookie);
         document.cookie = "clickid="+getURLParameter('clickid');
-          document.cookie = "fbid="+getURLParameter('fbid');
+         // document.cookie = "fbid="+getURLParameter('fbid');
            document.cookie = "key="+getURLParameter('key');
-            document.cookie = "ad_id="+getURLParameter('ad_id');
-            document.cookie = "adset_id="+getURLParameter('adset_id');
-            document.cookie = "campaign_id="+getURLParameter('campaign_id');
-            document.cookie = "ad_name="+getURLParameter('ad_name');
-            document.cookie = "adset_name="+getURLParameter('adset_name');
-            document.cookie = "campaign_name="+getURLParameter('campaign_name');
-          document.cookie = "placement="+getURLParameter('placement');
+         //   document.cookie = "ad_id="+getURLParameter('ad_id');
+         //   document.cookie = "adset_id="+getURLParameter('adset_id');
+         //   document.cookie = "campaign_id="+getURLParameter('campaign_id');
+          //  document.cookie = "ad_name="+getURLParameter('ad_name');
+          //  document.cookie = "adset_name="+getURLParameter('adset_name');
+          //  document.cookie = "campaign_name="+getURLParameter('campaign_name');
+        //  document.cookie = "placement="+getURLParameter('placement');
           
       
           //ОТПРАВЛЯЕМ ЮЗЕРА ВНУТРЬ ПВА С КЛИКИД
-        window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid')+'&fbid='+getURLParameter('fbid')+'&key'+getURLParameter('key')+'&ad_id'+getURLParameter('ad_id')+'&adset_id'+getURLParameter('adset_id')+'&campaign_id'+getURLParameter('campaign_id')+'&ad_name'+getURLParameter('ad_name')+'&adset_name'+getURLParameter('adset_name')+'&campaign_name'+getURLParameter('campaign_name')+'&placement'+getURLParameter('placement');
+        window.location.href = '/index.html?'+'clickid='+getURLParameter('clickid')+'&key'+getURLParameter('key');
            
          // https://track001v1.com/click.php?lp=1
           
